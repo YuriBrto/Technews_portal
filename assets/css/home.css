@@ -1,0 +1,43 @@
+/* assets/css/home.css */
+
+/* Container centralizado */
+.home-container {
+  @apply max-w-xl mx-auto mt-20 p-6 bg-gray-50 rounded-lg shadow;
+}
+
+/* Título */
+.home-container h2 {
+  @apply text-2xl font-bold mb-4 text-gray-800;
+}
+
+/* Texto de instrução */
+.home-container p {
+  @apply mb-4 text-gray-700;
+}
+
+/* Formulário de inscrição */
+.home-container form {
+  @apply flex flex-col sm:flex-row gap-2;
+}
+
+/* Input de e-mail */
+.home-container input[type="text"] {
+  @apply border rounded p-2 flex-1;
+}
+
+/* Botão de inscrição */
+.home-container button {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200;
+}
+
+/* Mensagem de sucesso */
+.home-container .flash-info {
+  @apply mt-4 text-green-600 font-medium;
+}
+
+/* Responsividade */
+@media (min-width: 640px) {
+  .home-container form {
+    @apply flex-row;
+  }
+}

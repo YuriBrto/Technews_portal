@@ -10,6 +10,14 @@ config :hello_phoenix, HelloPhoenix.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+
+
+
+config :hello_phoenix, HelloPhoenix.Mailer,
+  adapter: Swoosh.Adapters.Local
+
+
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

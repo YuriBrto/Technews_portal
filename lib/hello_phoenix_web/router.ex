@@ -20,6 +20,8 @@ defmodule HelloPhoenixWeb.Router do
 
 
     get "/", PageController, :home
+    post "/subscribe", PageController, :subscribe
+
   end
 
   # Other scopes may use custom stacks.

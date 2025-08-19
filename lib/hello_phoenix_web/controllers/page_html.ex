@@ -6,5 +6,7 @@ defmodule HelloPhoenixWeb.PageHTML do
   """
   use HelloPhoenixWeb, :html
 
+  import HelloPhoenixWeb.FormComponent
+
   embed_templates "page_html/*"
 end

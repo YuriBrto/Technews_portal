@@ -66,7 +66,9 @@ defmodule HelloPhoenix.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
       {:httpoison, "~> 2.1"}, # requisições HTTP 
-      {:jason, "~> 1.4"} # parsing de JSON
+      {:jason, "~> 1.4"}, # parsing de JSON
+      
+       {:gen_smtp, "~> 1.1"}          # <--- Adaptador SMTP 
     ]
   end
 
