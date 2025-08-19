@@ -1,0 +1,27 @@
+<link rel="stylesheet" href={~p"/assets/newsletter.css"}>
+
+<div class="news-section">
+  <div class="news-header">
+    <h2>Últimas Notícias de Tecnologia</h2>
+    <p>Fique por dentro das novidades do mundo tech</p>
+  </div>
+
+  <div class="news-grid">
+    <%= for article <- @articles do %>
+      <div class="news-card">
+        <div class="news-image-wrapper">
+          <img class="news-image" src={article["urlToImage"] || "/images/placeholder.png"} alt={article["title"]} />
+          <div class="overlay"></div>
+        </div>
+        <div class="news-details">
+          <div>
+            <h3 class="news-title"><%= article["title"] %></h3>
+            <p class="news-description"><%= article["description"] || "Sem descrição" %></p>
+            <p class="news-source">Fonte: <%= article["source"]["name"] %></p>
+          </div>
+          <a class="btn-readmore" href={article["url"]} target="_blank">Leia Mais</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
