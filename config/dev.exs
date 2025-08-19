@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :hello_phoenix, HelloPhoenix.Repo,
   username: "postgres",
-  password: "admin",
+  password: "postgres",
   hostname: "localhost",
   database: "hello_phoenix_dev",
   stacktrace: true,
