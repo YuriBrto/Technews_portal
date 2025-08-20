@@ -22,10 +22,10 @@ config :hello_phoenix, :news_api_key, System.get_env("NEWS_API_KEY")
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
-
 config :hello_phoenix, HelloPhoenixWeb.Endpoint,
   url: [host: "technews-portal-p43u.onrender.com", scheme: "https", port: 443],
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  check_origin: ["https://technews-portal-p43u.onrender.com"]
