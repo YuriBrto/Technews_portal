@@ -1,39 +1,51 @@
-HelloPhoenix Newsletter
+# HelloPhoenix Newsletter
 
-O HelloPhoenix Newsletter é uma aplicação web construída com Elixir e Phoenix 1.8, que consome notícias de tecnologia em tempo real utilizando a NewsAPI. A aplicação apresenta as últimas manchetes de tecnologia em uma interface moderna e responsiva, estilizada com TailwindCSS e daisyUI, permitindo que os usuários fiquem atualizados sobre temas como inovação, software e inteligência artificial.
+O **HelloPhoenix Newsletter** é uma aplicação web construída com Elixir e Phoenix 1.8, que consome notícias de tecnologia em tempo real utilizando a NewsAPI. Agora, a aplicação utiliza **Phoenix LiveView** para uma experiência dinâmica e interativa, incluindo alternância de tema claro/escuro com transições suaves.
 
-Funcionalidades principais:
+## Funcionalidades principais
 
-Integração com NewsAPI para busca de notícias em português.
+- **Integração com NewsAPI** para busca de notícias em português.
+- **Exibição das notícias em cards** com título, descrição, imagem e fonte.
+- **Botão “Leia Mais”** que direciona para a notícia completa.
+- **Layout responsivo**, adaptável para desktop e dispositivos móveis.
+- **Alternância de tema claro/escuro** (dark/light) com transição suave, afetando toda a interface e os cards.
+- **Configuração segura da chave da API** via variáveis de ambiente, evitando expor informações sensíveis.
+- **Newsletter como LiveView**, permitindo atualizações dinâmicas e uso de LiveComponents.
 
-Exibição das notícias em cards com título, descrição, imagem e fonte.
+## Tecnologias utilizadas
 
-Botão “Leia Mais” que direciona para a notícia completa.
+- Elixir 1.18 e Phoenix 1.8
+- Phoenix LiveView
+- HTTPoison para requisições HTTP
+- Jason para parsing de JSON
+- TailwindCSS e daisyUI para estilo e componentes
 
-Layout responsivo, adaptável para desktop e dispositivos móveis.
+## Estrutura do projeto
 
-Sistema de templates modular, seguindo os padrões Phoenix (NewsletterHTML e PageHTML).
+- `lib/hello_phoenix_web/live/` – LiveViews da aplicação, incluindo `NewsletterLive`
+- `lib/hello_phoenix_web/live/newsletter_live.html.heex` – Template HEEx para renderização das notícias
+- `assets/css/newsletter.css` – Estilos específicos para a seção de notícias, adaptados para tema claro/escuro
+- `config/dev.exs` e `config/runtime.exs` – Configuração de variáveis de ambiente para proteger a chave da API
 
-Configuração segura da chave da API via variáveis de ambiente, evitando expor informações sensíveis.
+## Como rodar
 
-Tecnologias utilizadas:
+1. Instale as dependências:
+   ```sh
+   mix deps.get
+   cd assets && npm install
+   ```
 
-Elixir 1.18 e Phoenix 1.8
+2. Configure a variável de ambiente da NewsAPI:
+   - No desenvolvimento: edite `config/dev.exs`
+   - Em produção/deploy: defina `NEWS_API_KEY` no ambiente
 
-HTTPoison para requisições HTTP
+3. Rode o servidor:
+   ```sh
+   mix phx.server
+   ```
 
-Jason para parsing de JSON
+4. Acesse em [http://localhost:4000](http://localhost:4000)
 
-TailwindCSS e daisyUI para estilo e componentes
+---
 
-Phoenix LiveView (opcional) para futuras atualizações em tempo real
-
-Estrutura do projeto:
-
-lib/hello_phoenix_web/controllers/ – Controladores da aplicação, incluindo NewsletterController
-
-lib/hello_phoenix_web/templates/newsletter/ – Templates HEEx para renderização das notícias
-
-assets/css/newsletter.css – Estilos específicos para a seção de notícias
-
-Configuração de variáveis de ambiente para proteger a chave da API
+**Agora o HelloPhoenix Newsletter está ainda mais moderno, seguro e
