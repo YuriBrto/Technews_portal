@@ -19,3 +19,11 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+
+
+config :hello_phoenix, HelloPhoenixWeb.Endpoint,
+  http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
+  url: [host: "seu-dominio.onrender.com", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")

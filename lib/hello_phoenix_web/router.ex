@@ -20,7 +20,11 @@ defmodule HelloPhoenixWeb.Router do
 
 
     get "/", PageController, :home
+
+    live "/theme_toggle", HelloPhoenixWeb.ThemeToggleLive
+
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", HelloPhoenixWeb do

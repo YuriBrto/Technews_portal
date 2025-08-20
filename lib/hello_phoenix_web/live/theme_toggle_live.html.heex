@@ -1,0 +1,5 @@
+<div class={"theme-toggle #{@theme}"}>
+  <button phx-click="toggle_theme">
+    <%= if @theme == "light", do: "🌙", else: "☀️" %>
+  </button>
+</div>
