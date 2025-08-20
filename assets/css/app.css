@@ -3,6 +3,7 @@
 
 @import "tailwindcss" source(none);
 @import "./newsletter.css";
+@import"./theme.css";
 
 @source "../css";
 @source "../js";
@@ -106,4 +107,21 @@
 
 /* This file is for your main application CSS */
 
+[data-theme="light"] {
+  --bg-color: white;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1f2937;
+  --text-color: white;
+}
+
+body,.bg-base-100,
+.bg-base-200,
+.text-base-content  {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.9s, color 0.9s;
+}
 

@@ -1,13 +1,10 @@
-defmodule HelloPhoenixWeb.NewsletterController do
-  use HelloPhoenixWeb, :controller
-  alias HTTPoison
-  alias Jason
+defmodule HelloPhoenixWeb.NewsletterLive do
+  use HelloPhoenixWeb, :live_view
 
-
-  @api_key "ea4259d757e24ae9804b4fe9001a87bf"
   @base_url "https://newsapi.org/v2/everything"
+  @api_key Application.fetch_env!(:hello_phoenix, :news_api_key)
 
-  def tech_news(conn, _params) do
+  def mount(_params, _session, socket) do
     from_date = Date.utc_today() |> Date.add(-30) |> Date.to_iso8601()
     keywords = "tecnologia OR inovação OR software OR \"inteligência artificial\""
     url = "#{@base_url}?q=#{URI.encode(keywords)}&from=#{from_date}&sortBy=publishedAt&language=pt&pageSize=10&apiKey=#{@api_key}"
@@ -17,12 +14,9 @@ defmodule HelloPhoenixWeb.NewsletterController do
         {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
           {:ok, data} = Jason.decode(body)
           Map.get(data, "articles", [])
-
-        _ ->
-          []
+        _ -> []
       end
 
-   # Renderiza com o módulo HTML
-   render(conn, :tech_news, articles: articles)
+    {:ok, assign(socket, articles: articles, theme: "light")}
   end
 end

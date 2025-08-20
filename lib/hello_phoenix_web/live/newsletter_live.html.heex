@@ -1,0 +1,33 @@
+<!-- Botão de toggle fixo no canto superior direito -->
+<div class="fixed top-4 right-4 z-50">
+  <.live_component
+    module={HelloPhoenixWeb.ThemeToggleLive}
+    id="theme-toggle"
+    theme={@theme}
+  />
+</div>
+
+<div class="news-section bg-base-100 text-base-content rounded-xl shadow-lg p-8 transition-colors duration-700">
+  <div class="news-header mb-8">
+    <h2 class="text-3xl font-bold text-base-content transition-colors duration-700">Últimas Notícias de Tecnologia</h2>
+    <p class="text-base-content/70 transition-colors duration-700">Fique por dentro das novidades do mundo tech</p>
+  </div>
+
+  <div class="news-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <%= for article <- @articles do %>
+      <div class="news-card bg-base-200 text-base-content rounded-lg shadow p-4 flex flex-col justify-between transition-colors duration-700">
+        <div class="news-image-wrapper mb-4">
+          <img class="news-image rounded w-full h-40 object-cover transition-all duration-700" src={article["urlToImage"] || "/images/placeholder.png"} alt={article["title"]} />
+        </div>
+        <div class="news-details flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="news-title text-lg font-semibold mb-2 text-base-content transition-colors duration-700"><%= article["title"] %></h3>
+            <p class="news-description text-base-content/70 mb-2 transition-colors duration-700"><%= article["description"] || "Sem descrição" %></p>
+            <p class="news-source text-xs text-base-content/50 transition-colors duration-700">Fonte: <%= article["source"]["name"] %></p>
+          </div>
+          <a class="btn btn-primary mt-4 transition-colors duration-700" href={article["url"]} target="_blank">Leia Mais</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

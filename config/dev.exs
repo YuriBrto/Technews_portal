@@ -3,12 +3,14 @@ import Config
 # Configure your database
 config :hello_phoenix, HelloPhoenix.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "admin",
   hostname: "localhost",
   database: "hello_phoenix_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+
+config :hello_phoenix, :news_api_key, "ea4259d757e24ae9804b4fe9001a87bf"
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

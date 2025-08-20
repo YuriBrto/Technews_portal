@@ -28,5 +28,5 @@
     "allowJs": true,
     "noEmit": true
   },
-  "include": ["js/**/*"]
+  "include": ["js/**/*", "../tailwind.config.js"]
 }

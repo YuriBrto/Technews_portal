@@ -1,5 +1,5 @@
-<div class={"theme-toggle #{@theme}"}>
-  <button phx-click="toggle_theme">
+<div id="theme-toggle-hook" phx-hook="ThemeToggle">
+  <button phx-click="toggle_theme" phx-target={@myself}>
     <%= if @theme == "light", do: "🌙", else: "☀️" %>
   </button>
 </div>

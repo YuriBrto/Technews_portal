@@ -1,0 +1,33 @@
+.theme-toggle button {
+  transition: all 0.5s ease;
+  font-size: 2rem;
+}
+
+.theme-toggle.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-toggle.dark {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Body global */
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.light {
+  --bg-color: white;
+  --text-color: black;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark {
+  --bg-color: #1f2937;
+  --text-color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

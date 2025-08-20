@@ -15,15 +15,12 @@ defmodule HelloPhoenixWeb.Router do
   end
 
   scope "/", HelloPhoenixWeb do
-    pipe_through :browser
-    get "/newsletter", NewsletterController, :tech_news
+  pipe_through :browser
 
-
-    get "/", PageController, :home
-
-    live "/theme_toggle", HelloPhoenixWeb.ThemeToggleLive
-
-  end
+ live "/", PageLive
+  live "/newsletter", NewsletterLive
+ 
+end
 
 
   # Other scopes may use custom stacks.
