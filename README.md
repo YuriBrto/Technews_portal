@@ -27,8 +27,7 @@ O **HelloPhoenix Newsletter** é uma aplicação web construída com Elixir e Ph
 - `assets/css/newsletter.css` – Estilos específicos para a seção de notícias, adaptados para tema claro/escuro
 - `config/dev.exs` e `config/runtime.exs` – Configuração de variáveis de ambiente para proteger a chave da API
 
- Acesse em [Technews_portal]([https://technews-portal-p43u.onrender.com])
-
+Acesse o portal Technews: [Technews_portal](https://technews-portal-p43u.onrender.com)
 ---
 
 **Agora o HelloPhoenix Newsletter está ainda mais moderno, seguro e interativo !
