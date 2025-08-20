@@ -27,25 +27,8 @@ O **HelloPhoenix Newsletter** é uma aplicação web construída com Elixir e Ph
 - `assets/css/newsletter.css` – Estilos específicos para a seção de notícias, adaptados para tema claro/escuro
 - `config/dev.exs` e `config/runtime.exs` – Configuração de variáveis de ambiente para proteger a chave da API
 
-## Como rodar
-
-1. Instale as dependências:
-   ```sh
-   mix deps.get
-   cd assets && npm install
-   ```
-
-2. Configure a variável de ambiente da NewsAPI:
-   - No desenvolvimento: edite `config/dev.exs`
-   - Em produção/deploy: defina `NEWS_API_KEY` no ambiente
-
-3. Rode o servidor:
-   ```sh
-   mix phx.server
-   ```
-
-4. Acesse em [http://localhost:4000](http://localhost:4000)
+ Acesse em [Technews_portal]([https://technews-portal-p43u.onrender.com])
 
 ---
 
-**Agora o HelloPhoenix Newsletter está ainda mais moderno, seguro e
+**Agora o HelloPhoenix Newsletter está ainda mais moderno, seguro e interativo !
